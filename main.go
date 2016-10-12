@@ -1,6 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/big"
+)
+
+func ModExpGoBigInteger(base, exponent, modulus int64) int64 {
+	return new(big.Int).Mod(new(big.Int).Exp(big.NewInt(113), big.NewInt(500), nil), big.NewInt(97)).Int64()
+}
+
+func ModExpGoBigIntegerExp(base, exponent, modulus int64) int64 {
+	return new(big.Int).Exp(big.NewInt(113), big.NewInt(500), big.NewInt(97)).Int64()
+}
 
 func ModExp(base, exponent, modulus int64) int64 {
 	if modulus == 1 {
