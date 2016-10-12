@@ -2,19 +2,19 @@ package main
 
 import "fmt"
 
-func ModExp(base, exponent, modulus int) int {
+func ModExp(base, exponent, modulus int64) int64 {
 	if modulus == 1 {
 		return 0
 	}
 	base = base % modulus
-	result := 1
-	for i := 0; i < exponent; i++ {
+	result := int64(1)
+	for i := int64(0); i < exponent; i++ {
 		result = (result * base) % modulus
 	}
 	return result
 }
 
-func ModExpWithSquaring(base, exponent, modulus int) int {
+func ModExpWithSquaring(base, exponent, modulus int64) int64 {
 	if modulus == 1 {
 		return 0
 	}
