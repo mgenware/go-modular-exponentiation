@@ -5,14 +5,17 @@ import (
 	"math/big"
 )
 
+// ModExpGoBigInteger calculates modular exponentiation using math/big package.
 func ModExpGoBigInteger(base, exponent, modulus int64) int64 {
 	return new(big.Int).Mod(new(big.Int).Exp(big.NewInt(base), big.NewInt(exponent), nil), big.NewInt(modulus)).Int64()
 }
 
+// ModExpGoBigIntegerExp calculates modular exponentiation using native Exp method from math/big package.
 func ModExpGoBigIntegerExp(base, exponent, modulus int64) int64 {
 	return new(big.Int).Exp(big.NewInt(base), big.NewInt(exponent), big.NewInt(modulus)).Int64()
 }
 
+// ModExp calculates modular exponentiation in O(exponent).
 func ModExp(base, exponent, modulus int64) int64 {
 	if modulus == 1 {
 		return 0
@@ -25,6 +28,7 @@ func ModExp(base, exponent, modulus int64) int64 {
 	return result
 }
 
+// ModExpWithSquaring calculates modular exponentiation with exponentiation by squaring, O(log exponent).
 func ModExpWithSquaring(base, exponent, modulus int64) int64 {
 	if modulus == 1 {
 		return 0
