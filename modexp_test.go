@@ -32,6 +32,15 @@ func testWithFunc(f Func, t *testing.T) {
 	if res != exp {
 		t.Fatalf("Expected: %v, Got %v.", exp, res)
 	}
+
+	base = 81792
+	exponent = 73363
+	modulus = 233
+	res = f(base, exponent, modulus)
+	exp = 161
+	if res != exp {
+		t.Fatalf("Expected: %v, Got %v.", exp, res)
+	}
 }
 
 func TestModExpGoBigInteger(t *testing.T) {
