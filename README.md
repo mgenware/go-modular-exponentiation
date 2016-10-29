@@ -2,10 +2,10 @@
 Modular Exponentiation in Golang
 
 * **Assume all arguments are positive.**
-* `ModExpGoBigInteger` calculates modular exponentiation using math/big package.
-* `ModExpGoBigIntegerExp` calculates modular exponentiation using native Exp method from math/big package.
-* `ModExp` calculates modular exponentiation in O(exponent).
-* `ModExpWithSquaring` calculates modular exponentiation with exponentiation by squaring, O(log exponent).
+* `ModExpGoBigInteger` calculates modular exponentiation using `math/big` package.
+* `ModExpGoBigIntegerExp` calculates modular exponentiation using native `Exp` method from `math/big` package.
+* `ModExp` calculates modular exponentiation `in O(exponent)`.
+* `ModExpWithSquaring` calculates modular exponentiation with exponentiation by squaring, `O(log exponent)`.
 
 # Benchmark
 ```
