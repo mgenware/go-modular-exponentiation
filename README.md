@@ -8,9 +8,10 @@ Modular Exponentiation in Golang
 * `ModExpWithSquaring` calculates modular exponentiation with exponentiation by squaring, `O(log exponent)`.
 
 # Benchmark
+Tested on Golang 1.7.1, 2.4 GHz Intel Core i5, macOS 10.11.
 ```
-BenchmarkModExp-4                  	  200000	      7331 ns/op
-BenchmarkModExpWithSquaring-4      	 5000000	       334 ns/op
-BenchmarkModExpGoBigInteger-4      	  300000	      4149 ns/op
-BenchmarkModExpGoBigIntegerExp-4   	 2000000	      1003 ns/op
+BenchmarkModExp-4                  	    1000	   1232339 ns/op
+BenchmarkModExpWithSquaring-4      	 2000000	       654 ns/op
+BenchmarkModExpGoBigInteger-4      	     100	  19249302 ns/op
+BenchmarkModExpGoBigIntegerExp-4   	 1000000	      1705 ns/op
 ```

@@ -4,6 +4,12 @@ import "testing"
 
 type Func func(base, exponent, modulus int64) int64
 
+const (
+	BenchmarkBase     = 81792
+	BenchmarkExponent = 73363
+	BenchmarkModulus  = 233
+)
+
 func testWithFunc(f Func, t *testing.T) {
 	var base, exponent, modulus, exp int64
 	base = 111
@@ -61,24 +67,24 @@ func TestModExpWithSquaring(t *testing.T) {
 
 func BenchmarkModExp(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		ModExp(123, 456, 89)
+		ModExp(BenchmarkBase, BenchmarkExponent, BenchmarkModulus)
 	}
 }
 
 func BenchmarkModExpWithSquaring(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		ModExpWithSquaring(123, 456, 89)
+		ModExpWithSquaring(BenchmarkBase, BenchmarkExponent, BenchmarkModulus)
 	}
 }
 
 func BenchmarkModExpGoBigInteger(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		ModExpGoBigInteger(123, 456, 89)
+		ModExpGoBigInteger(BenchmarkBase, BenchmarkExponent, BenchmarkModulus)
 	}
 }
 
 func BenchmarkModExpGoBigIntegerExp(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		ModExpGoBigIntegerExp(123, 456, 89)
+		ModExpGoBigIntegerExp(BenchmarkBase, BenchmarkExponent, BenchmarkModulus)
 	}
 }
